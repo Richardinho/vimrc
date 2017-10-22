@@ -12,7 +12,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set path=.,**
-map <leader>r :NERDTreeFind<cr>
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
