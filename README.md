@@ -2,7 +2,6 @@
 My .vimrc file
 
  ```
-
 syntax on
 set autoindent
 set number
