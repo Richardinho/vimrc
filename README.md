@@ -17,6 +17,7 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let NERDTreeShowHidden=1
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+nnoremap <silent> <Leader>t :NERDTreeToggle<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
