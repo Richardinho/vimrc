@@ -2,7 +2,6 @@
 My .vimrc file
 
  ```
-
 syntax on
 set autoindent
 set expandtab
@@ -22,9 +21,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-
-
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
