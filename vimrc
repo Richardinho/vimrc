@@ -1,5 +1,6 @@
 syntax on
 set autoindent
+set relativenumber
 set autowriteall
 set expandtab
 set hidden
