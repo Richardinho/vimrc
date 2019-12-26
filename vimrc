@@ -1,6 +1,7 @@
 syntax on
 set autoindent
 set relativenumber
+set number
 set autowriteall
 set expandtab
 set hidden
@@ -33,6 +34,13 @@ let NERDTreeWinSize=50
 
 "  NORMAL MODE MAPPINGS
 
+
+" turn on relative line numbers
+nnoremap <Leader>rn :set relativenumber<cr> 
+
+"  turn off relative line numbers
+nnoremap <Leader>nr :set norelativenumber<cr>
+
 "  close a window
 nnoremap <Leader>cl :close<CR>
 
@@ -50,6 +58,9 @@ nnoremap L $
 
 "  write file
 nnoremap ;w :w<cr>
+
+"  send line to top of file
+nnoremap <Leader>ltt ddggP
 
 " Fugitive shortcuts
 nnoremap <Leader>gs :Gstatus<CR>
