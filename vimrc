@@ -79,12 +79,6 @@ nnoremap <Leader>v :NERDTreeFind<CR>
 inoremap jk <esc>
 
 
-"  ABBREVIATIONS
-:abbrev fn function
-:abbrev cn const
-:abbrev io import
-
-
 "  PLUGINS
 call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
