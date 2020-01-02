@@ -35,11 +35,11 @@ let NERDTreeWinSize=50
 "  NORMAL MODE MAPPINGS
 
 
-" turn on relative line numbers
-nnoremap <Leader>rn :set relativenumber<cr> 
+"  empty current line
+nnoremap <leader>dd cc<esc>
 
-"  turn off relative line numbers
-nnoremap <Leader>nr :set norelativenumber<cr>
+"  set current word to all caps
+nnoremap <leader><c-u> viwUe
 
 "  close a window
 nnoremap <Leader>cl :close<CR>
@@ -58,6 +58,7 @@ nnoremap L $
 
 "  write file
 nnoremap ;w :w<cr>
+
 
 "  send line to top of file
 nnoremap <Leader>ltt ddggP
@@ -78,6 +79,8 @@ nnoremap <Leader>v :NERDTreeFind<CR>
 "  switch to normal mode
 inoremap jk <esc>
 
+"  convert word to all caps
+inoremap <c-u> <esc>viwUea
 
 "  PLUGINS
 call plug#begin('~/.vim/plugged')
