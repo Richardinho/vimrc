@@ -34,6 +34,8 @@ let NERDTreeWinSize=50
 
 "  NORMAL MODE MAPPINGS
 
+"  insert Lorem Ipsum
+nnoremap <leader>lo :read ~/lorem-ipsum<cr>
 
 "  empty current line
 nnoremap <leader>dd cc<esc>
