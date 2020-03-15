@@ -1,7 +1,6 @@
 syntax on
 set autoindent
 set relativenumber
-set number
 set autowriteall
 set expandtab
 set hidden
@@ -18,7 +17,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-let mapleader = ","
+let mapleader = " " 
 let localleader = "\\"
 
 
@@ -42,12 +41,18 @@ nnoremap <leader>dd cc<esc>
 
 "  set current word to all caps
 nnoremap <leader><c-u> viwUe
+"  go to previous tab
+nnoremap <leader>gt gT 
 
 "  close a window
-nnoremap <Leader>cl :close<CR>
+nnoremap <leader>q :close<cr>
 
 "  open .vimrc for editing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" search backwards on line
+nnoremap <leader>t T
+nnoremap <leader>f F
 
 "  source .vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -59,33 +64,46 @@ nnoremap H ^
 nnoremap L $
 
 "  write file
-nnoremap ;w :w<cr>
+nnoremap <leader>w :w<cr>
 
+" close all windows apart from current on
+nnoremap <leader>on :only<cr>
 
-"  send line to top of file
-nnoremap <Leader>ltt ddggP
+" create empty line below current on, move to it without leaving normal mode
+nnoremap <leader>lb o <esc>
 
 " Fugitive shortcuts
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gw :Gwrite<cr>
+
+" insert tab
+nnoremap <tab> i<tab><esc>
+
 
 " NERDTree shortcuts
-nnoremap <Leader>tr :NERDTree<CR>
-nnoremap <Leader>tt :NERDTreeToggle<CR>
-nnoremap <Leader>tf :NERDTreeFocus<CR>
-nnoremap <Leader>v :NERDTreeFind<CR>
+nnoremap <leader>tr :NERDTree<cr>
+nnoremap <leader>tf :NERDTreeFocus<cr>
+nnoremap <leader>v :NERDTreeFind<cr>
 
 "  INSERT MODE MAPPINGS
 
-"  switch to normal mode
-inoremap jk <esc>
+"  switch to normal mode 
+inoremap jj <esc>
+
+
+ab imrt import React from 'react';
+ab imst import styled from 'styled-components'; 
+
 
 "  convert word to all caps
 inoremap <c-u> <esc>viwUea
 
 "  PLUGINS
-call plug#begin('~/.vim/plugged')
+
+call plug#begin()
+
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-fugitive'
