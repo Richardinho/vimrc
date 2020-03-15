@@ -12,6 +12,8 @@ set shiftwidth=2
 set statusline+=%#warningmsg#
 set statusline+=%*
 set tabstop=2
+set mouse=a
+set incsearch
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -83,6 +85,11 @@ inoremap jk <esc>
 
 "  convert word to all caps
 inoremap <c-u> <esc>viwUea
+
+" abbreviations
+iabbrev adn and
+iabbrev boyd body
+iabbrev boty body
 
 "  PLUGINS
 call plug#begin('~/.vim/plugged')
