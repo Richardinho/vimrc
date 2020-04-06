@@ -1,29 +1,58 @@
 syntax on
+"  options {{{
 set autoindent
 set relativenumber
 set autowriteall
+set nonumber
 set expandtab
 set hidden
 set iskeyword+=-
-set number
 set path=.,**
 set shiftwidth=2
-set statusline+=%#warningmsg#
-set statusline+=%*
+"}}}
+
+" STATUS LINE {{{
+set statusline=status:
+
+"  full path to the file in the buffer
+set statusline+=%F
+
+" modified flag
+set statusline+=%m
+
+" filetype
+set statusline+=\ %y
+
+"  buffer number
+set statusline+=\ buffer\ number:\ %n
+
+"  line number
+set statusline+=\ line:\ %l
+
+"  always show status line even if just one window open
+set laststatus=2
+
+"}}}
+
 set tabstop=2
 set mouse=a
 set incsearch
 
+"  UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+"}}}
 
 let mapleader = " " 
 let localleader = "\\"
 
+:nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+:nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+:vnoremap <leader>" <esc>`<i"<esc>`>lli"<esc> 
 
-" NERDTree config
+" NERDTree config {{{
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\.swp$']
@@ -32,6 +61,7 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinSize=50
+" }}}
 
 "  NORMAL MODE MAPPINGS
 
@@ -40,6 +70,7 @@ nnoremap <leader>lo :read ~/lorem-ipsum<cr>
 
 "  empty current line
 nnoremap <leader>dd cc<esc>
+
 
 "  set current word to all caps
 nnoremap <leader><c-u> viwUe
@@ -74,20 +105,44 @@ nnoremap <leader>on :only<cr>
 " create empty line below current on, move to it without leaving normal mode
 nnoremap <leader>lb o <esc>
 
-" Fugitive shortcuts
+" Fugitive shortcuts {{{
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gw :Gwrite<cr>
+"}}}
 
 " insert tab
 nnoremap <tab> i<tab><esc>
 
+" markdown filed settings {{{
+augroup filetype_markdown
+  autocmd!
+  autocmd FileType markdown onoremap <buffer> ih :<c-u>execute "normal! ?\\(^--\\+$\\)\\\|\\(^==\\+$\\)\r:nohlsearch\rkvg_"<cr>
+  autocmd FileType markdown setlocal statusline=this\ is\ markdown\ %f
+augroup END
+"}}}
 
-" NERDTree shortcuts
+" Javascript file settings {{{
+augroup filetype_javascript
+  autocmd!
+  autocmd FileType javascript setlocal statusline=javascript
+  autocmd FileType javascript setlocal statusline+=%f\ %l
+augroup END
+"}}}
+
+" Vimscript file settings {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=market
+augroup END
+" }}}
+
+" NERDTree shortcuts {{{
 nnoremap <leader>tr :NERDTree<cr>
 nnoremap <leader>tf :NERDTreeFocus<cr>
 nnoremap <leader>v :NERDTreeFind<cr>
+" }}}
 
 "  INSERT MODE MAPPINGS
 
@@ -102,12 +157,17 @@ ab imst import styled from 'styled-components';
 "  convert word to all caps
 inoremap <c-u> <esc>viwUea
 
-" abbreviations
+"  abbreviations
 iabbrev adn and
 iabbrev boyd body
 iabbrev boty body
 
-"  PLUGINS
+
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+
+
+"  PLUGINS {{{
 
 call plug#begin()
 
@@ -124,3 +184,4 @@ call plug#begin()
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 call plug#end()
+"}}}
