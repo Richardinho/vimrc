@@ -130,6 +130,7 @@ augroup filetype_javascript
   autocmd FileType javascript setlocal statusline+=%f\ %l
 augroup END
 "}}}
+"
 
 " Vimscript file settings {{{
 augroup filetype_vim
