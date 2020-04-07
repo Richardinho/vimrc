@@ -146,10 +146,8 @@ nnoremap <tab> i<tab><esc>
 "  switch to normal mode 
 inoremap jj <esc>
 
-
 ab imrt import React from 'react';
 ab imst import styled from 'styled-components'; 
-
 
 "  convert word to all caps
 inoremap <c-u> <esc>viwUea
@@ -159,10 +157,8 @@ iabbrev adn and
 iabbrev boyd body
 iabbrev boty body
 
-
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
-
 
 "  PLUGINS {{{
   call plug#begin()
@@ -173,7 +169,8 @@ onoremap il( :<c-u>normal! F)vi(<cr>
     Plug 'jlanzarotta/bufexplorer'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'leafgarland/typescript-vim'
-    Plug 'pangloss/vim-javascript' Plug 'mxw/vim-jsx'
+    Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
     Plug 'epilande/vim-react-snippets'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
