@@ -1,6 +1,7 @@
 # vimrc file
 
 ## Installation
+
 ### Create a symlink
 After cloning this repo in the usual way,
 create a link to the vimrc file in this repo
