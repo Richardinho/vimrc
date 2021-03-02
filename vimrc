@@ -1,63 +1,63 @@
 syntax on
 
-"  options {{{
-  set autoindent
-  set nonumber
-  set relativenumber
-  set autowriteall
-  set expandtab
-  set hidden
-  set iskeyword+=-
-  set path=.,**
-  set shiftwidth=2
-  set tabstop=2
-  set mouse=a
-  set incsearch
-"}}}
+set viminfo='100,<50,s10,%
+set autoindent
+set number
+set relativenumber
+set expandtab
+set hidden
+set iskeyword+=-
+set path=.,**
+set shiftwidth=2
+set tabstop=2
+set mouse=a
+set incsearch
+set hlsearch
+set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<,space:.
+set nolist
 
-" Status Line {{{
-  set statusline=status:
+let g:tsuquyomi_completion_detail = 1
+let g:typescript_ignore_browserwords=0
 
-  "  full path to the file in the buffer
-  set statusline+=%F
+" allow backspace over end of line and start of insert
+set backspace=eol,start
 
-  " modified flag
-  set statusline+=%m
+:nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
-  " filetype
-  set statusline+=\ %y
+set statusline=status:
 
-  "  buffer number
-  set statusline+=\ buffer\ number:\ %n
+"  full path to the file in the buffer
+set statusline+=%F
 
-  "  line number
-  set statusline+=\ line:\ %l
+" modified flag
+set statusline+=%m
 
-  "  always show status line even if just one window open
-  set laststatus=2
-"}}}
+" filetype
+set statusline+=\ %y
 
+"  buffer number
+set statusline+=\ buffer\ number:\ %n
 
-"  UltiSnips {{{
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<c-b>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-  let g:UltiSnipsEditSplit="vertical"
-"}}}
+"  line number
+set statusline+=\ line:\ %l
+
+"  lines in buffer
+set statusline+=\ of:\%L
+
+"  always show status line even if just one window open
+set laststatus=2
 
 let mapleader = " " 
 let localleader = "\\"
 
-" NERDTree config {{{
-  let NERDTreeShowHidden=1
-  let NERDTreeAutoDeleteBuffer=1
-  let NERDTreeIgnore=['\.swp$']
-  let NERDTreeAutoCenter=1
-  let NERDTreeQuitOnOpen=1
-  let NERDTreeShowBookmarks=1
-  let NERDTreeShowLineNumbers=1
-  let NERDTreeWinSize=50
-" }}}
+let NERDTreeShowHidden=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeIgnore=['\.swp$']
+let NERDTreeAutoCenter=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeWinSize=50
 
 "  NORMAL MODE MAPPINGS
 
@@ -101,17 +101,15 @@ nnoremap <leader>on :only<cr>
 " create empty line below current one, move to it without leaving normal mode
 nnoremap <leader>lb o <esc>
 
-" Fugitive shortcuts {{{
-  nnoremap <leader>gs :Gstatus<cr>
-  nnoremap <leader>gd :Gdiff<cr>
-  nnoremap <leader>gb :Gblame<cr>
-  nnoremap <leader>gw :Gwrite<cr>
-"}}}
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gw :Gwrite<cr>
 
 " insert tab
 nnoremap <tab> i<tab><esc>
 
-" markdown filed settings {{{
+" markdown file settings {{{
   augroup filetype_markdown
     autocmd!
     autocmd FileType markdown onoremap <buffer> ih :<c-u>execute "normal! ?\\(^--\\+$\\)\\\|\\(^==\\+$\\)\r:nohlsearch\rkvg_"<cr>
@@ -126,7 +124,6 @@ nnoremap <tab> i<tab><esc>
     autocmd FileType javascript setlocal statusline+=%f\ %l
   augroup END
 "}}}
-"
 
 " Vimscript file settings {{{
   augroup filetype_vim
@@ -135,11 +132,9 @@ nnoremap <tab> i<tab><esc>
   augroup END
 " }}}
 
-" NERDTree shortcuts {{{
-  nnoremap <leader>tr :NERDTree<cr>
-  nnoremap <leader>tf :NERDTreeFocus<cr>
-  nnoremap <leader>v :NERDTreeFind<cr>
-" }}}
+nnoremap <leader>tr :NERDTree<cr>
+nnoremap <leader>tf :NERDTreeFocus<cr>
+nnoremap <leader>v :NERDTreeFind<cr>
 
 "  INSERT MODE MAPPINGS
 
@@ -147,10 +142,22 @@ nnoremap <tab> i<tab><esc>
 inoremap jj <esc>
 
 ab imrt import React from 'react';
+
 ab imst import styled from 'styled-components'; 
 
-"  convert word to all caps
-inoremap <c-u> <esc>viwUea
+
+" show white space at end of line as error
+nnoremap <leader>s :match Error /\s\+\_$/<cr>
+nnoremap <leader>S :match none<cr>
+
+
+" delete two lines but allow them to be undone separately
+" seems a little hacky having to go into insert mode during this command, but
+" I couldn't find a way of breaking the undo sequence in normal mode
+nnoremap <leader>di ddi<C-G>u<esc>dd
+
+" put a semicolon at the end of the current line
+nnoremap <leader>; :execute "normal! mqA;\e`q"<cr>
 
 "  abbreviations
 iabbrev adn and
@@ -160,19 +167,22 @@ iabbrev boty body
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 
-"  PLUGINS {{{
-  call plug#begin()
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-unimpaired'
-    Plug 'tpope/vim-fugitive'
-    Plug 'scrooloose/nerdtree'
-    Plug 'jlanzarotta/bufexplorer'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'leafgarland/typescript-vim'
-    Plug 'pangloss/vim-javascript'
-    Plug 'mxw/vim-jsx'
-    Plug 'epilande/vim-react-snippets'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-  call plug#end()
-"}}}
+"  Plugins
+call plug#begin()
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-fugitive'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Quramy/tsuquyomi'
+  Plug 'jlanzarotta/bufexplorer'
+"  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"   Plug 'leafgarland/typescript-vim'
+"  Plug 'pangloss/vim-javascript'
+"  Plug 'mxw/vim-jsx'
+"  Plug 'epilande/vim-react-snippets'
+"  Plug 'SirVer/ultisnips'
+"  Plug 'honza/vim-snippets'
+call plug#end()
+autocmd FileType typescript,typescriptreact nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
+autocmd FileType typescript,typescriptreact nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+
