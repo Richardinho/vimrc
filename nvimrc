@@ -6,6 +6,8 @@ set tabstop=2
 set nolist
 set listchars=eol:⏎,tab:->,trail:.,nbsp:.,space:.
 
+
+# random comment
 let mapleader = " " 
 let NERDTreeShowLineNumbers=1
 
