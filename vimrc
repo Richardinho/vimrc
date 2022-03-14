@@ -140,6 +140,7 @@ nnoremap <leader>v :NERDTreeFind<cr>
 
 "  switch to normal mode 
 inoremap jj <esc>
+inoremap jk <esc>
 
 ab imrt import React from 'react';
 

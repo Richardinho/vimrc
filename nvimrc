@@ -7,7 +7,6 @@ set nolist
 set listchars=eol:⏎,tab:->,trail:.,nbsp:.,space:.
 
 
-# random comment
 let mapleader = " " 
 let NERDTreeShowLineNumbers=1
 
@@ -22,6 +21,9 @@ nnoremap <leader>w :w<cr>
 
 "  switch to normal mode 
 inoremap jj <esc>
+
+"  switch to normal mode (alternative way)
+inoremap jk <esc>
 
 " close all windows apart from current on
 nnoremap <leader>on :only<cr>
@@ -42,6 +44,9 @@ nnoremap L $
 " TODO: Make this work on ranges, not just whole file
 nnoremap <leader>so :%!python -m json.tool<cr>
 
+" comment out line of HTML
+nnoremap <leader>co ^i<!--<esc>$a--><esc>
+
 " Fugitive mappings
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
@@ -54,3 +59,15 @@ nnoremap <leader>tf :NERDTreeFocus<cr>
 nnoremap <leader>v :NERDTreeFind<cr>
 
 autocmd BufRead,BufNewFile *.ts set suffixesadd+=.ts
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html Prettier
+
+call plug#begin('~/.config/nvim/autoload/plugged')
+	Plug 'scrooloose/NERDTree'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-fugitive'
+  Plug 'jlanzarotta/bufexplorer'
+	" post install (yarn install | npm install) then load plugin only for editing supported files
+	Plug 'prettier/vim-prettier', {
+		\ 'do': 'npm install --frozen-lockfile --production',
+		\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+call plug#end()
