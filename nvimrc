@@ -73,6 +73,8 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 nnoremap <silent> <leader>f :FZF<CR>
 
+" EMACS-STYLE bindings
+
 " start of line
 :cnoremap <C-A>  <Home>
 
@@ -93,12 +95,6 @@ nnoremap <silent> <leader>f :FZF<CR>
 
 " recall previous (older) command-line
 :cnoremap <C-P>  <Up>
-
-" back one word
-:cnoremap <Esc><C-B> <S-Left>
-
-" forward one word
-:cnoremap <Esc><C-F> <S-Right>
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'scrooloose/NERDTree'
