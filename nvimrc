@@ -3,6 +3,7 @@ set relativenumber
 set autoindent
 set shiftwidth=2
 set tabstop=2
+set expandtab
 set nolist
 set listchars=eol:⏎,tab:->,trail:.,nbsp:.,space:.
 
