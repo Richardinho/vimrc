@@ -84,6 +84,12 @@ nnoremap <silent> <leader>f :FZF<CR>
 " delete character under cursor
 :cnoremap <C-D>  <Del>
 
+" back one word
+:cnoremap <Esc>b <S-Left>
+
+" forward one word
+:cnoremap <Esc>f <S-Right>
+
 " end of line
 :cnoremap <C-E>  <End>
 
@@ -95,6 +101,13 @@ nnoremap <silent> <leader>f :FZF<CR>
 
 " recall previous (older) command-line
 :cnoremap <C-P>  <Up>
+
+" delete from cursor to end of line
+func! KillLineToEnd()
+    return strpart(getcmdline(), 0, getcmdpos()-1)
+endfunc
+cnoremap <C-k> <C-\>eKillLineToEnd()<CR>
+
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'scrooloose/NERDTree'
