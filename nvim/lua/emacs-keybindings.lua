@@ -24,8 +24,6 @@ utils.map('c', '<C-B>', '<Left>')
 -- forward one character
 utils.map('c', '<C-F>', '<Right>')
 
--- delete character under cursor
-utils.map('c', '<C-D>', '<Del>')
 
 -- recall newer command-line
 utils.map('c', '<C-N>', '<Down>')
