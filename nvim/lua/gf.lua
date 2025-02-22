@@ -19,8 +19,10 @@ local function create_paths(raw_path)
   return paths
 end
 
+local home = os.getenv('HOME')
+
 local function file_exists(name)
-  local f = io.open(string.gsub(name, "~", "/Users/richard"), "r")
+  local f = io.open(string.gsub(name, "~", home), "r")
   if f ~= nil then
     io.close(f)
     return true
@@ -30,7 +32,7 @@ local function file_exists(name)
 end
 
 local function is_dir(path)
-  local f = io.open(string.gsub(path, "~", "/Users/richard"), "r")
+  local f = io.open(string.gsub(path, "~", home), "r")
   if f ~= nil then
     local ok, err, code = f:read(1)
     f:close()
