@@ -53,7 +53,6 @@ local function gf()
 
   for i, v in ipairs(paths) do
     if file_exists(v) and not is_dir(v) then
-      -- is file a file or a folder?
       existing_file = v
       break
     end
