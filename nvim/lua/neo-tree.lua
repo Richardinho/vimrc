@@ -8,6 +8,7 @@ return {
 		},
 	},
 	keys = {
+		{ "<leader>be", false },
 		{
 			"<leader>tf",
 			function()
