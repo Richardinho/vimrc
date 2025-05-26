@@ -1,4 +1,4 @@
-# Test 4 Neovim Config
+# Lazy Work Config for Neovim
 
 ## Plugins
 
@@ -12,41 +12,41 @@
 
 repository: https://github.com/preservim/nerdtree
 
-keymappings:
-`<leader>tr`: open a fresh NERDTree 
-`<leader>tf`: opens NERDTree if it is not already open
-`<leader>tv`: open file for current buffer in NERDTree
+#### keymappings:
+* `<leader>tr`: open a fresh NERDTree 
+* `<leader>tf`: opens NERDTree if it is not already open
+* `<leader>tv`: open file for current buffer in NERDTree
 
 ### FZF Lua
 
 repository: https://github.com/ibhagwan/fzf-lua
 
-keymappings:
-`<Ctrl> p`: search for files
-`<Ctrl> g`: grep in project
-`<leader> gw`: grep word under cursor
-`<Ctrl> r`: resume
+#### keymappings:
+* `<Ctrl> p`: search for files
+* `<Ctrl> g`: grep in project
+* `<leader> gw`: grep word under cursor
+* `<Ctrl> r`: resume
 
-in picker keymappings
-`<Ctrl> h`: hide
-`<Ctrl> /`: toggle help
-`<Ctrl> f`: toggle fullscreen
-`<Ctrl> p`: toggle preview
-`<Ctrl> d`: preview-page-down
-`<Ctrl> u`: preview-page-up
+#### in picker keymappings
+* `<Ctrl> h`: hide
+* `<Ctrl> /`: toggle help
+* `<Ctrl> f`: toggle fullscreen
+* `<Ctrl> p`: toggle preview
+* `<Ctrl> d`: preview-page-down
+* `<Ctrl> u`: preview-page-up
 
 ### Bufexplorer
 
 repository: https://github.com/jlanzarotta/bufexplorer
 
-keymappings:
-`<leader> be`: open Bufexplorer 
+#### keymappings:
+* `<leader> be`: open Bufexplorer 
 in buffer:
-`d`: delete buffer
-`q`: quit
-`v`: open buffer in another window on the left of the current
-`O`: open buffer in original window
-`D`: wipe buffer
+* `d`: delete buffer
+* `q`: quit
+* `v`: open buffer in another window on the left of the current
+* `O`: open buffer in original window
+* `D`: wipe buffer
 
 ### LuaSnip
 
@@ -57,15 +57,15 @@ repository: https://github.com/L3MON4D3/LuaSnip
 
 repository: https://github.com/Saghen/blink.cmp
 
-keymappings: 
-`<Ctrl> y`: select and accept
-`<Ctrl> e`: dismiss
-`<Ctrl> <space>`: show/hide documentation
-`<Ctrl> p`: select previous
-`<Ctrl> n`: select next
-`<Tab>`: snippet forward
-`<S-Tab>`: snippet back
-`<Ctrl> k`: show/hide signature
+#### keymappings: 
+* `<Ctrl> y`: select and accept
+* `<Ctrl> e`: dismiss
+* `<Ctrl> <space>`: show/hide documentation
+* `<Ctrl> p`: select previous
+* `<Ctrl> n`: select next
+* `<Tab>`: snippet forward
+* `<S-Tab>`: snippet back
+* `<Ctrl> k`: show/hide signature
 
 
 ## colorscheme
@@ -74,3 +74,4 @@ koehler
 ## TODO
 * why is ctrl-Y not doing default behaviour?
 * work out how to add custom snippets
+* Add Fugitive plugin
