@@ -41,7 +41,7 @@ repository: https://github.com/ibhagwan/fzf-lua
 
 #### in picker keymappings
 * `<Ctrl> h`: hide
-* `<Ctrl> /`: toggle help
+* `<Ctrl> l`: toggle help
 * `<Ctrl> f`: toggle fullscreen
 * `<Ctrl> r`: toggle preview
 * `<Ctrl> d`: preview-page-down
