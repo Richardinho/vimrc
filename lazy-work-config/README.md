@@ -1,5 +1,16 @@
 # Lazy Work Config for Neovim
 
+## Getting Started
+1. clone this repo
+2. create symbolic link
+```
+ln -s <path-to-repo>/lazy-work-config ~/.config/lazy-work-config
+```
+3. run with
+```
+NVIM_APPNAME=lazy-work-config nvim <file-to-edit>
+```
+
 ## Plugins
 
 * NERDTree  
