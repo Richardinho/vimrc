@@ -9,7 +9,8 @@
 * blink.cmp
 
 ### NERDTree
-repository: 
+
+repository: https://github.com/preservim/nerdtree
 
 keymappings:
 `<leader>tr`: open a fresh NERDTree 
@@ -17,13 +18,15 @@ keymappings:
 `<leader>tv`: open file for current buffer in NERDTree
 
 ### FZF Lua
-repository:
+
+repository: https://github.com/ibhagwan/fzf-lua
 
 keymappings:
 `<Ctrl> p`: search for files
 `<Ctrl> g`: grep in project
 `<leader> gw`: grep word under cursor
 `<Ctrl> r`: resume
+
 in picker keymappings
 `<Ctrl> h`: hide
 `<Ctrl> /`: toggle help
@@ -33,6 +36,10 @@ in picker keymappings
 `<Ctrl> u`: preview-page-up
 
 ### Bufexplorer
+
+repository: https://github.com/jlanzarotta/bufexplorer
+
+keymappings:
 `<leader> be`: open Bufexplorer 
 in buffer:
 `d`: delete buffer
@@ -43,11 +50,12 @@ in buffer:
 
 ### LuaSnip
 
-repository:
+repository: https://github.com/L3MON4D3/LuaSnip
 
 
 ### blink.cmp
-repository:
+
+repository: https://github.com/Saghen/blink.cmp
 
 keymappings: 
 `<Ctrl> y`: select and accept
