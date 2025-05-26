@@ -25,45 +25,55 @@ NVIM_APPNAME=lazy-work-config nvim <file-to-edit>
 repository: https://github.com/preservim/nerdtree
 
 #### keymappings:
-* `<leader>tr`: open a fresh NERDTree 
-* `<leader>tf`: opens NERDTree if it is not already open
-* `<leader>tv`: open file for current buffer in NERDTree
+| mapping | description |
+|-|-|
+| &lt;leader>tr | open a fresh NERDTree |
+| &lt;leader>tf | opens NERDTree if it is not already open |
+| &lt;leader>tv | open file for current buffer in NERDTree |
 
 ### FZF Lua
 
 repository: https://github.com/ibhagwan/fzf-lua
 
 #### keymappings:
-* `<Ctrl> p`: search for files
-* `<Ctrl> g`: grep in project
-* `<leader> gw`: grep word under cursor
-* `<Ctrl> r`: resume
+| mapping | description |
+|-|-|
+| &lt;Ctrl> p | search for files |
+| &lt;Ctrl> g | grep in project |
+| &lt;leader> gw | grep word under cursor |
+| &lt;Ctrl> r | resume |
 
 #### in picker keymappings
-* `<Ctrl> h`: hide
-* `<Ctrl> l`: toggle help
-* `<Ctrl> f`: toggle fullscreen
-* `<Ctrl> r`: toggle preview
-* `<Ctrl> d`: preview-page-down
-* `<Ctrl> u`: preview-page-up
+| mapping | description |
+|-|-|
+| &lt;Ctrl> h | hide |
+| &lt;Ctrl> l | toggle help |
+| &lt;Ctrl> f | toggle fullscreen |
+| &lt;Ctrl> r | toggle preview |
+| &lt;Ctrl> d | preview-page-down |
+| &lt;Ctrl> u | preview-page-up |
 
 ### Bufexplorer
 
 repository: https://github.com/jlanzarotta/bufexplorer
 
 #### keymappings:
-* `<leader> be`: open BufExplorer 
-in buffer:
-* `d`: delete buffer
-* `D`: wipe buffer
-* `q`: quit
+| mapping | description |
+|-|-|
+| &lt;leader> be | open BufExplorer |
 
-* `V`: open buffer in another window on the left of the current
-* `v`: open buffer in another window on the right of the current
-* `f`: open buffer in another window below the current
-* `F`: open buffer in another window above the current
-* `O`: open buffer in original window
-* `D`: wipe buffer
+in buffer:
+| mapping | description |
+|-|-|
+| d | delete buffer |
+| D | wipe buffer |
+| q | quit |
+| V | open buffer in another window on the left of the current |
+| v | open buffer in another window on the right of the current |
+| f | open buffer in another window below the current |
+| F | open buffer in another window above the current |
+| O | open buffer in original window |
+| D | wipe buffer |
 
 ### LuaSnip
 
@@ -75,14 +85,16 @@ repository: https://github.com/L3MON4D3/LuaSnip
 repository: https://github.com/Saghen/blink.cmp
 
 #### keymappings: 
-* `<Ctrl> y`: select and accept
-* `<Ctrl> e`: dismiss
-* `<Ctrl> <space>`: show/hide documentation
-* `<Ctrl> p`: select previous
-* `<Ctrl> n`: select next
-* `<Tab>`: snippet forward
-* `<S-Tab>`: snippet back
-* `<Ctrl> k`: show/hide signature
+| mapping | description |
+|-|-|
+| &lt;Ctrl> y | select and accept |
+| &lt;Ctrl> e | dismiss |
+| &lt;Ctrl> &lt;space> | show/hide documentation |
+| &lt;Ctrl> p | select previous |
+| &lt;Ctrl> n | select next |
+| &lt;Tab> | snippet forward |
+| &lt;S-Tab> | snippet back |
+| &lt;Ctrl> k | show/hide signature |
 
 ### Fugitive
 
