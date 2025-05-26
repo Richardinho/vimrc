@@ -7,6 +7,7 @@
 * bufexplorer
 * LuaSnip
 * blink.cmp
+* Fugitive
 
 ### NERDTree
 
@@ -31,7 +32,7 @@ repository: https://github.com/ibhagwan/fzf-lua
 * `<Ctrl> h`: hide
 * `<Ctrl> /`: toggle help
 * `<Ctrl> f`: toggle fullscreen
-* `<Ctrl> p`: toggle preview
+* `<Ctrl> r`: toggle preview
 * `<Ctrl> d`: preview-page-down
 * `<Ctrl> u`: preview-page-up
 
@@ -40,11 +41,16 @@ repository: https://github.com/ibhagwan/fzf-lua
 repository: https://github.com/jlanzarotta/bufexplorer
 
 #### keymappings:
-* `<leader> be`: open Bufexplorer 
+* `<leader> be`: open BufExplorer 
 in buffer:
 * `d`: delete buffer
+* `D`: wipe buffer
 * `q`: quit
-* `v`: open buffer in another window on the left of the current
+
+* `V`: open buffer in another window on the left of the current
+* `v`: open buffer in another window on the right of the current
+* `f`: open buffer in another window below the current
+* `F`: open buffer in another window above the current
 * `O`: open buffer in original window
 * `D`: wipe buffer
 
@@ -67,6 +73,9 @@ repository: https://github.com/Saghen/blink.cmp
 * `<S-Tab>`: snippet back
 * `<Ctrl> k`: show/hide signature
 
+### Fugitive
+
+repository: https://github.com/tpope/vim-fugitive
 
 ## colorscheme
 koehler
@@ -74,4 +83,4 @@ koehler
 ## TODO
 * why is ctrl-Y not doing default behaviour?
 * work out how to add custom snippets
-* Add Fugitive plugin
+* divide Lazy config into separate files
