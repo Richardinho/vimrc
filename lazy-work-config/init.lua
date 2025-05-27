@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 vim.opt.tabstop =2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -27,17 +29,17 @@ local function transform_config(config)
       desc = item.desc,
     })
   end
-  return transformed
+  return transfomed
 end
 
 local key_config = {
   { mapping = '<C-\\>', command = 'buffers', desc = 'buffers' },  
-  { mapping = '<C-p>', command = 'files', desc = 'files' },  
-  { mapping = '<C-k>', command = 'builtin', desc = 'builtint' },  
-  -- { mapping = '<C-l>', command = 'live_grep_glob', desc = 'live grep glob' },  
-  { mapping = '<C-g>', command = 'grep_project', desc = 'grep_project' },  
-  -- { mapping = '<C-h>', command = 'help_tags', desc = 'help tags' },  
-  { mapping = '<C-r>', command = 'resume', desc = 'resume' },  
+  { mapping = '<C-p>f', command = 'files', desc = 'files' },  
+  { mapping = '<C-p>k', command = 'builtin', desc = 'builtint' },  
+  { mapping = '<C-p>g', command = 'live_grep_glob', desc = 'live grep glob' },  
+  { mapping = '<C-p>j', command = 'grep_project', desc = 'grep_project' },  
+  { mapping = '<C-p>h', command = 'help_tags', desc = 'help tags' },  
+  { mapping = '<C-p>r', command = 'resume', desc = 'resume' },  
   { mapping = '<leader>gw', command = 'grep_cword', desc = 'grep word under cursor' },  
 }
 
