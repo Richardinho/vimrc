@@ -9,8 +9,12 @@ ln -s <path-to-repo>/lazy-work-config ~/.config/lazy-work-config
 3. run with
 ```
 NVIM_APPNAME=lazy-work-config nvim <file-to-edit>
-```
 
+```
+4. Alternatively, you can set `NVIM_APPNAME` in your `~/.zshrc` file so that it always applies:
+```
+export NVIM_APPNAME=lazy-work-config
+```
 ## Plugins
 
 * NERDTree  
