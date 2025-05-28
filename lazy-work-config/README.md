@@ -24,6 +24,12 @@ export NVIM_APPNAME=lazy-work-config
 * blink.cmp
 * Fugitive
 
+### LSP config
+
+| mapping | description |
+|---------|-------------|
+|    K    | show info   |
+
 ### NERDTree
 
 repository: https://github.com/preservim/nerdtree
@@ -111,3 +117,5 @@ koehler
 * why is ctrl-Y not doing default behaviour?
 * work out how to add custom snippets
 * divide Lazy config into separate files
+* enable icons
+* get LSP keymappings working

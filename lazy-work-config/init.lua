@@ -43,6 +43,7 @@ local key_config = {
   { mapping = '<leader>gw', command = 'grep_cword', desc = 'grep word under cursor' },  
 }
 
+
 -- Lazy.nvim Setup
 require("lazy").setup({
   {
@@ -62,6 +63,18 @@ require("lazy").setup({
       { '<leader>tv', '<cmd>NERDTreeFind<cr>', desc = 'find NERDTree' },
       { '<leader>tc', '<cmd>NERDTreeClose<cr>', desc = 'close NERDTree' },
     },
+  },
+  {
+    "mason-org/mason.nvim",
+    opts = {
+        ui = {
+            icons = {
+                package_installed = "✓",
+                package_pending = "➜",
+                package_uninstalled = "✗"
+            }
+        }
+    }
   },
   {
     "ibhagwan/fzf-lua",
