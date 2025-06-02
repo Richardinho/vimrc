@@ -5,6 +5,24 @@ return {
 	-- or if using mini.icons/mini.nvim
 	dependencies = { "echasnovski/mini.icons" },
 	opts = {},
+	config = function()
+		require("fzf-lua").setup({
+			keymap = {
+				builtin = {
+					["<C-h>"] = "hide",
+					["<C-l>"] = "toggle-help",
+					["<C-f>"] = "toggle-fullscreen",
+					["<C-r>"] = "toggle-preview",
+					["<C-d>"] = "preview-page-down",
+					["<C-u>"] = "preview-page-up",
+				},
+			},
+			winopts = {
+				-- when true, makes picker cover whole screen
+				fullscreen = false,
+			},
+		})
+	end,
 	keys = {
 		{
 			"<leader>ff",
